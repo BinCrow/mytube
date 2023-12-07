@@ -1,8 +1,23 @@
 import React from 'react'
+import { youtubeText } from '../../data/youtube'
+import { Link } from 'react-router-dom'
 
 const Youtub = () => {
   return (
-    <div>Youtub</div>
+    <section id='webd'>
+      <h2>GSAP 패럴랙스 효과를 하고 싶다면!</h2>
+      <div className="video__inner">
+        {youtubeText.map((video, key) =>(
+          <div className="video" key={key}>
+            <div className="video__thumb play__icon">
+              <Link to={`/video/${video.website}`}>
+                <img src={video.img} alt={video.title} />
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   )
 }
 
